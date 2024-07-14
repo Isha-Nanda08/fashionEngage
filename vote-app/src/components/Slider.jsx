@@ -3,6 +3,9 @@ import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@mui/icons-materi
 import styled from "styled-components";
 import { sliderItems, candidates } from "../data";
 import { mobile } from "../responsive";
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 const Container = styled.div`
 width: 100%;
@@ -114,12 +117,28 @@ margin-left: 20px;
 /* margin-left:50px; */
 ;
 `
+const customModalStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 1000,  // Ensure the modal is above other content
+    },
+    overlay: {
+        zIndex: 999,  // Ensure the overlay is above other content
+    }
+};
 
 
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
     const [votes, setVotes] = useState(candidates.map((candidate) => candidate.votes));
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
 
     const handleClick = (direction) => {
         if (direction === "left") {
@@ -134,6 +153,10 @@ const Slider = () => {
         const updatedVotes = [...votes];
         updatedVotes[slideIndex] += 1;
         setVotes(updatedVotes);
+        setModalIsOpen(true);
+    };
+    const closeModal = () => {
+        setModalIsOpen(false);
     };
 
     return (
@@ -159,6 +182,16 @@ const Slider = () => {
             <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowForwardIosOutlined />
             </Arrow>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={customModalStyles}
+            >
+                <h2>Vote Recorded!</h2>
+                <p>Your vote has been successfully recorded.</p>
+                <p>You earned one credit 🪙+1</p>
+                <button onClick={closeModal}>Close</button>
+            </Modal>
         </Container>
     );
 };
