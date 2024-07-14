@@ -22,25 +22,25 @@ export const candidates= [
 export const sliderItems = [
     {
         id: 1,
-        img: "https://media.istockphoto.com/id/1169378197/photo/stylish-shopaholic-with-purchases.jpg?s=612x612&w=0&k=20&c=RGwdnF0wrWV8NNBawXAbzAHUe8sMBpLsEvIICLR9dM4=",
-        title: "SUMMER SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        img: "https://5.imimg.com/data5/SELLER/Default/2023/3/ZJ/BF/IW/28280455/designer-gown-suit-for-casual-wear-latest-designs-in-2023-looking-nice-model-500x500.jpg",
+        title: "Designer Gown Suit",
+        desc: "Gown Fabric* :Heavy Faux Georgette With Fancy Lace Border With Sleeve Gown Inner* :(Fully Stiched ) :Heavy Faux Georgette With Heavy Embroidery 7 mm Sequence Work With Back Cover ReadyMade Lace Border ",
         bg: "f5fafd",
         
     },
     {
         id: 2,
-        img: "https://img.lovepik.com/free-png/20210919/lovepik-fashion-womens-summer-shopping-image-png-image_400331117_wh1200.png",
-        title: "AUTUMN COLLECTION",
-        desc: "STEP INTO THE NEW SEASON WITH OUR LATEST COLLECTION.",
+        img: "https://media-photos.depop.com/b1/2597660/1505886978_255f3acff9af408c815624db52fac270/P0.jpg",
+        title: "Black dress",
+        desc: "• Crew neck • Short sleeve • Plain design • Tiered design • Midi length",
         bg: "fcf1ed",
         
         },
         {
             id: 3,
-            img: "https://media.istockphoto.com/id/1179962771/photo/happy-girl-in-autumn-yellow-scarf.jpg?s=612x612&w=0&k=20&c=ni3R873JaYO5a1P01JMQkIIFF6TIXMz9N01fTYQDZt4=",
-            title: "WINTER ESSENTIALS",
-            desc: "STAY WARM AND STYLISH THIS WINTER WITH OUR ESSENTIAL COLLECTION.",
+            img: "https://i.pinimg.com/736x/6a/45/20/6a4520aff51789f1e97a1bed521f9575.jpg",
+            title: "Criss Cross Tied Solid Tank Top",
+            desc: "solid-color hue, this simple yet casual tank top emphasizes a scoop collarline, seductive backless design with a criss-cross detail tied at the back. ",
             bg: "f5fafd",
         
         },

@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 const Container = styled.div`
    display: flex;
+   z-index:2;
    flex-direction: column;
    border: 2px solid #000;
    border-radius: 12px;
-   margin: 5px;
-   background-color: #00000012;
+   margin: 8px;
+   background-color: #f7f4f4f8;
    &:hover {
-      background-color: #5dcdc044;
+      background-color: #86b0abf8;
    }
 `;
 
@@ -58,6 +59,8 @@ const Button = styled.button`
 
 
 
+
+
 const Candidate = ({ item }) => {
    const [votes, setVotes] = useState(item.votes); // State to manage votes count
 
@@ -76,6 +79,7 @@ const Candidate = ({ item }) => {
                <Posted>posted 1 day ago</Posted>
                
             </CanDetails>
+           
          </Wrapper>
          <Slider />
       </Container>

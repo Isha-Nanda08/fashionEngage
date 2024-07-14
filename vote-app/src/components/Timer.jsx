@@ -88,7 +88,7 @@ const Timer = () => {
  
     return (
         <div
-            style={{ textAlign: "right", margin: "auto" }}>
+            style={{ textAlign: "right", margin: "auto" ,position:"fixed",zIndex:3,top:"5px",right:"0%",backgroundColor:"teal" ,color:"white",padding:"1px",borderRadius:"5px",border:"2px solid black"}}>
             
             <h2>{timer}</h2>
             

@@ -59,9 +59,12 @@ height: 90vh;
 `
 
 const Image = styled.img`
-width: 90vh;
+margin-left:60px;
+width: 60vh;
 height: 65%;
-;
+/* position:absolute; */
+top: 50%;
+align-self:right;
 `
 
 const InfoContainer = styled.div`
@@ -74,14 +77,15 @@ top: 0;
 
 const Title = styled.h1`
 font-size: 30px;
+
 ;
 `
 
 const Desc = styled.p`
-margin: 10px 0px;
-font-size: 20px;
+margin-right:65px;
+font-size: 15px;
 font-weight: 500;
-letter-spacing: 3px;
+
 top:0px;
 ;
 `
@@ -89,13 +93,13 @@ top:0px;
 const Button=styled.button`
 padding: 10px;
 font-size: 20px;
-background-color: transparent;
+background-color: #69a587bf;
 cursor: pointer;
 border: 1px solid #343232a0;
 color: #343232;
 transition: all 0.5s ease;
 margin-left:10px;
-margin-top:30px;
+margin-top:0px;
 &:hover{
     background-color: #69a587bf;
     color: #fff;
@@ -103,7 +107,8 @@ margin-top:30px;
 `
 
 const Votes = styled.div`
-font-size: 15px;
+font-size: 23px;
+font-weight: 600;
 margin-left: 20px;
 /* position: absolute; */
 /* margin-left:50px; */
