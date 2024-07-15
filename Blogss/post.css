@@ -9,7 +9,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #e5f9e6c6;
+    background-color: #5479709c;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -17,7 +17,7 @@ body {
 .form-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #e0dbdb;
 }
 
 .form-group {
@@ -32,10 +32,11 @@ body {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #c7d0ccd0;
 }
 
 .form-group textarea {
