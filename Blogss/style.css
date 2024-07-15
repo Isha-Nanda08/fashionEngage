@@ -293,7 +293,7 @@ header{
 
 /* footer */
 footer{
-    background: var(--exDark);
+    background: rgba(18, 86, 70, 0.812);
     color: #fff;
     text-align: center;
     padding: 2rem 0;
