@@ -14,7 +14,7 @@ z-index: 20;
     flex-direction:column;
     color: #000;
     height: 70px;
-    background-color: #125050d5;
+    background-color: #104848e3;
     position: sticky;
     margin:0;
     background-position: center;

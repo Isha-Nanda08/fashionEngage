@@ -5,6 +5,7 @@ import {BrowserRouter as  Router,Routes,Route,Navigate} from "react-router-dom";
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Blogs from './pages/Blogs';
+import WriteBlogForm from './pages/WriteBlogForm';
 // 
 const App = () => {
     const user=false;
@@ -13,6 +14,7 @@ const App = () => {
     <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/blogs" element={<Blogs/>}/>
+        <Route exact path="/write" element={<WriteBlogForm/>}/>
         <Route
             path="/register"
             element={user ? <Navigate to="/" /> : <Register />}

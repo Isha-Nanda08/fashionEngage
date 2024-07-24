@@ -37,8 +37,11 @@ header{
     justify-content: stretch;
 }
 .navbar{
-    background: rgba(7, 84, 84, 0.737);
-    padding: 1.2rem;
+    background: #104848e3;
+    padding: 0.45rem;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
 }
 .navbar-brand{
     color: #fff;
@@ -62,7 +65,7 @@ header{
     text-decoration: none;
     display: inline-block;
     padding: 0.4rem 0.1rem;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     transition: opacity 0.5s ease;
 }
 .navbar-nav a:hover{
