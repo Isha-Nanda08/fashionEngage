@@ -9,13 +9,9 @@ app.use(cors());
 
 dotenv.config();
 
-mongoose
-    .connect(process.env.MONGO_URL,{
-        useNewUrlParser:true,
-        useUnifiedTopology:true,
-    })
+mongoose.connect(process.env.MONGO_URL,{})
     .then(()=>console.log("connected to DB"))
-    .catch(()=> console.log("could not connect to DB",err));
+    .catch((err)=> console.log("could not connect to DB",err));
 
 app.use(express.json());
 // app.use(express.json());
