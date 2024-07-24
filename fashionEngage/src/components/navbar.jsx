@@ -13,7 +13,7 @@ z-index: 20;
     display: flex;
     flex-direction:column;
     color: #000;
-    height: 60px;
+    height: 70px;
     background-color: #125050d5;
     position: sticky;
     margin:0;
@@ -69,7 +69,8 @@ const Logo=styled.div`
     justify-content: center;
     cursor: pointer;
     font-family: 'Great Vibes', cursive;
-    font-size: 30px;
+    font-size: 40px;
+    letter-spacing:3px;
     &:hover{
         transform: scale(1.2);
         background-color:#3241403c ;

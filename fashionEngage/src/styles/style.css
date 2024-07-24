@@ -25,6 +25,7 @@ img{
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 1.2rem;
+    position: relative;
 }
 
 /* header */
@@ -74,6 +75,9 @@ header{
     justify-content: center;
     text-align: center;
     color: #fff;
+    position: absolute;
+    top: 30%;
+    left:10%;
 }
 .banner-title{
     font-size: 3rem;

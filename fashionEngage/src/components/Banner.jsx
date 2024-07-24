@@ -4,7 +4,7 @@ import '../styles/style.css';
 const Banner = () => {
   return (
     <div className="banner">
-    <div className="container">
+    <div className="container2" >
       <h1 className="banner-title">
         <span>fashionEngage.</span> Fashion Blog
       </h1>
