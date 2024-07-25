@@ -1,5 +1,6 @@
 import styled from "styled-components"
-
+import { useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
 
 
 const Container=styled.div`
@@ -66,7 +67,7 @@ const Button=styled.button`
         opacity: 0.8;
         }
 `;
-const Link=styled.a`
+const StyleLink=styled(Link)`
     font-size: 12px;
     margin: 5px 0px;
     text-decoration: underline;
@@ -92,20 +93,70 @@ const Image=styled.img`
 `; 
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const user = {
+            email,
+            password
+        };
+        try {
+            const response = await fetch('http://localhost:5000/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Handle successful login
+                alert('Login successful');
+                // Store the token and redirect to another page if needed
+                localStorage.setItem('token', data.token);
+                navigate('/');
+            } else {
+                // Handle login errors
+                alert(data.message || 'Login failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    };
+
+
+
+
   return (
-    
     <Container>
         
         <Wrapper>
             <Title>SIGN IN</Title>
-            <Form>
-                <Input placeholder="username"/>
-                <Input placeholder="password"/>
+            <Form onSubmit={handleSubmit}>
+            <Input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <Input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
                 
-                <Button>LOGIN AS USER</Button>
+                <Button type="submit">LOGIN AS USER</Button>
                 
-                <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-                <Link>CREATE A NEW ACCOUNT</Link>
+                <StyleLink to ="/register">DO NOT YOU REMEMBER THE PASSWORD?</StyleLink>
+                <StyleLink to ="/register">CREATE A NEW ACCOUNT</StyleLink>
             </Form>
         </Wrapper>
     </Container>
