@@ -1,5 +1,7 @@
-import styled from "styled-components"
-
+import styled from "styled-components";
+import { Link as RouterLink } from "react-router-dom";
+import { useState } from "react"
+import axios from 'axios';
 
 
 const Container=styled.div`
@@ -63,45 +65,46 @@ const Button=styled.button`
         opacity: 0.8;
         }
 `;
-const Link=styled.a`
-    font-size: 12px;
-    margin: 5px 0px;
-    text-decoration: underline;
-    cursor: pointer;
-    color: #080808;
-    align-self:center;
-    &:hover{
-        color: teal;
-        opacity: 0.8;
-        }
+const StyledLink = styled(RouterLink)`
+  font-size: 12px;
+  margin: 5px 0px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #080808;
+  align-self: center;
+  &:hover {
+    color: teal;
+    opacity: 0.8;
+  }
 `;
-const Image=styled.img`
 
-    width:120vh;
-    height:100%;
-    margin: 0px 0px 0px 0px;
-    /* align-self:center; */
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 0.7;
-    
-
-`; 
 
 const Register = () => {
+    const [name,setName]= useState();
+    const [email,setEmail]= useState();
+    const [password,setPassword]= useState();
+
+    const handleSubmit=(e)=>{
+        e.preventDefault() ; // to prevent default submission
+        axios.post('http://localhost:5000/register',{name, email , password})
+        .then(result=>console.log("success",result))
+        .catch(err=>console.log('error',err))
+
+    }
   return (
     
     <Container>
-        <Image src='https://www.holdings.toppan.com/en/news/2020/08/t5v1940000000jq1-img/Todokusuri.jpg'/>
+        
         <Wrapper>
-            <Title>SIGN IN</Title>
-            <Form>
-                <Input placeholder="username"/>
-                <Input placeholder="password"/>
+            <Title>REGISTER</Title>
+            <Form onSubmit={handleSubmit}>
+                <Input placeholder="Username" onChange={(e)=>setName(e.target.value)}/>
+                <Input type= "email"placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
+                <Input type ="password" placeholder="password" onChange={(e)=>setPassword(e.target.value)}/>
                 
-                <Button>LOGIN</Button>
-                <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-                <Link>CREATE A NEW ACCOUNT</Link>
+                
+                <Button>Register</Button>
+                <StyledLink to="/login">ALREADY HAVE AN ACCOUNT?</StyledLink>
             </Form>
         </Wrapper>
     </Container>
