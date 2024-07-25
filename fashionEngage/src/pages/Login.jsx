@@ -79,23 +79,12 @@ const StyleLink=styled(Link)`
         opacity: 0.8;
         }
 `;
-const Image=styled.img`
-
-    width:120vh;
-    height:100%;
-    margin: 0px 0px 0px 0px;
-    /* align-self:center; */
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 0.7;
-    
-
-`; 
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const dbURL='http://localhost:5000/auth/login';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -105,7 +94,7 @@ const Login = () => {
             password
         };
         try {
-            const response = await fetch('http://localhost:5000/auth/login', {
+            const response = await fetch(dbURL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

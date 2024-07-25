@@ -51,8 +51,7 @@ const SvgPattern = () => {
   return (
     <SvgContainer>
       <svg height="100%" width="100%">
-        
-        <rect x="0" y="0" height="100%" width="100%" fill="url(#polka-dots)"></rect>
+  
         <SvgText x="60%" y="10%" textAnchor="middle" >
           Gracias hfdkjdgghj
         </SvgText>

@@ -1,75 +1,155 @@
-import React, { useState } from 'react';
-// import '../styles/writeblog.css'; // Ensure this path is correct
+import styled from "styled-components"
+import { useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
+
+
+const Container=styled.div`
+    width: 100v;
+    height: 100vh;
+    display: flex;
+    /* background-color:#c6e7f946; */
+    align-items: center;
+    justify-content: right;
+    /* background-image:url('https://fabriclore.com/cdn/shop/articles/Blog-Banner-for-graphics_27_84648c98-68f3-4715-9088-b080e4523743.jpg?crop=center&height=1200&v=1669698428&width=1200'); */
+    background-size: cover;
+
+`;
+
+const Wrapper=styled.div`
+    width:40%;
+    height: 70%;
+    padding: 20px;
+    background-color: #ffffffa1;
+    
+    border-radius: 10px;
+    /* border: 1px solid #000; */
+    margin-right: 40px;
+    margin-left: 0px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    z-index: 10;
+   
+
+`;
+const Title=styled.h1`
+    font-size: 24px;
+    font-weight: 300;
+`;
+
+const Form=styled.form`
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction:column;
+    /* align-items: center; */
+
+`;
+
+
+const Input=styled.input`
+    min-width: 40%;
+    margin:15px 0px;
+    padding: 10px;
+
+`;
+
+
+
+const Button=styled.button`
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    background-color: #074747;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 15px;
+    align-self: center;
+    &:hover{
+        background-color: teal;
+        opacity: 0.8;
+        }
+`;
+const StyleLink=styled(Link)`
+    font-size: 12px;
+    margin: 5px 0px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #080808;
+    align-self:center;
+    &:hover{
+        color: teal;
+        opacity: 0.8;
+        }
+`;
 
 const WriteBlogForm = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [image, setImage] = useState(null);
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const navigate = useNavigate();
+    const dbURL='http://localhost:5000/auth/writeBlog';
 
-  const handleTitleChange = (e) => setTitle(e.target.value);
-  const handleContentChange = (e) => setContent(e.target.value);
-  const handleImageChange = (e) => setImage(e.target.files[0]);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('content', content);
-    if (image) {
-      formData.append('image', image);
-    }
+        const user = {
+            title,
+            content
+        };
+        try {
+            const response = await fetch(dbURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            });
 
-    // Replace this URL with your actual endpoint
-    fetch('/submit-blog', {
-      method: 'POST',
-      body: formData,
-    })
-      .then(response => response.json())
-      .then(data => console.log('Success:', data))
-      .catch(error => console.error('Error:', error));
-  };
+            const data = await response.json();
+
+            if (response.ok) {
+                // Handle successful login
+                alert('post successful');
+                navigate('/Blogs');
+
+    
+            } else {
+                // Handle login errors
+                alert(data.message || 'Post failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+    };
+
+
+
 
   return (
-    <div >
-    <div className="form-container">
-      <h2>Write a Blog</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
-        <div className="form-group">
-          <label htmlFor="title">Blog Title</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={title}
-            onChange={handleTitleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="content">Blog Content</label>
-          <textarea
-            id="content"
-            name="content"
-            value={content}
-            onChange={handleContentChange}
-            required
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Upload Image (optional)</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
-        </div>
-        <button type="submit" className="submit-btn">Post</button>
-      </form>
-    </div>
-  </div>
-  );
-};
+    <Container>
+        
+        <Wrapper>
+            <Title>WRITE YOUR BLOG</Title>
+            <Form onSubmit={handleSubmit}>
+            <Input
+                type="text"
+                placeholder="Blog Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+            />
+            <Input
+                type="text"
+                placeholder="Content"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+            />
+                
+                <Button type="submit">POST</Button>
+                
+                
+            </Form>
+        </Wrapper>
+    </Container>
+    
+  )
+}
 
-export default WriteBlogForm;
+export default WriteBlogForm

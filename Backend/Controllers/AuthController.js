@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const UserModel = require("../models/User");
+const BlogModel = require('../models/Blog');
 
 
 const register = async (req, res) => {
@@ -66,7 +67,30 @@ const login = async (req, res) => {
     }
 }
 
+
+
+const blog = async (req, res) => {
+    try {
+        const { title, content } = req.body;
+       
+        const blogModel = new BlogModel({ title, content });
+        await blogModel.save();
+        res.status(201)
+            .json({
+                message: "blog written successfully",
+                success: true
+            })
+    } catch (err) {
+        res.status(500)
+            .json({
+                message: "Internal server errror",
+                success: false
+            })
+    }
+}
+
 module.exports = {
     register,
-    login
+    login,
+    blog
 }
