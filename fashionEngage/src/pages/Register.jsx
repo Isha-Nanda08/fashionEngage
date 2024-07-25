@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { useState } from "react"
-import axios from 'axios';
+
+
 
 
 const Container=styled.div`
@@ -80,15 +81,45 @@ const StyledLink = styled(RouterLink)`
 
 
 const Register = () => {
-    const [name,setName]= useState();
-    const [email,setEmail]= useState();
-    const [password,setPassword]= useState();
+    const [name,setName]= useState('');
+    const [email,setEmail]= useState('');
+    const [password,setPassword]= useState('');
+    const navigate = useNavigate();
+    const dbURL='http://localhost:5000/auth/register';
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=async (e)=>{
         e.preventDefault() ; // to prevent default submission
-        axios.post('http://localhost:5000/register',{name, email , password})
-        .then(result=>console.log("success",result))
-        .catch(err=>console.log('error',err))
+        const user = {
+            name,
+            email,
+            password
+        };
+
+        try {
+            const response = await fetch(dbURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Handle successful registration
+                alert('Registration successful');
+                navigate('/login');
+                // Redirect or perform other actions
+            } else {
+                // Handle registration errors
+                alert(data.message || 'Registration failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        }
+        
 
     }
   return (
@@ -98,9 +129,16 @@ const Register = () => {
         <Wrapper>
             <Title>REGISTER</Title>
             <Form onSubmit={handleSubmit}>
-                <Input placeholder="Username" onChange={(e)=>setName(e.target.value)}/>
-                <Input type= "email"placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
-                <Input type ="password" placeholder="password" onChange={(e)=>setPassword(e.target.value)}/>
+                <Input type="text" placeholder="Username" 
+                value={name}
+                onChange={(e)=>setName(e.target.value)}/>
+                <Input type= "email"
+                placeholder="Email" 
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}/>
+                <Input type ="password" 
+                value={password}
+                placeholder="password" onChange={(e)=>setPassword(e.target.value)}/>
                 
                 
                 <Button>Register</Button>
