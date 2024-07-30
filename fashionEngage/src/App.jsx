@@ -7,6 +7,8 @@ import Blogs from './pages/Blogs';
 import WriteBlogForm from './pages/WriteBlogForm';
 import Designer from './pages/Designer';
 import ThemeHome from './pages/ThemeHome';
+import Post from './pages/Post';
+import Design from './components/Design';
 // import Stage from './components/3dview/Stage';
 
 const App = () => {
@@ -26,18 +28,22 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home/>} />
         <Route exact path="/blogs" element={<Blogs />} />
         <Route exact path="/write" element={<WriteBlogForm />} />
-        <Route exact path="/designer" element={user ? <Designer /> : <Navigate to="/login" />} />
+        {/* <Route exact path="/designer" element={user ? <Designer /> : <Navigate to="/login" />} /> */}
         <Route exact path="/themeHome" element={<ThemeHome />} />
         <Route
           path="/register"
           element={user ? <Navigate to="/designer" /> : <Register />}
         />
         <Route
-          path="/login"
-          element={user ? <Navigate to="/designer" /> : <Login onLogin={handleLogin} />}
+          path="/designer"
+          element={<Designer/> }
+        />
+        <Route 
+          path="/post"
+          element={<Post/>}
         />
       </Routes>
     </Router>

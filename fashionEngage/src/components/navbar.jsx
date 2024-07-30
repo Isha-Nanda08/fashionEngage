@@ -158,7 +158,7 @@ const Navbar = () => {
             <MenuItem href="Blogs">BLOGS</MenuItem>
             <MenuItem href="">EVENTS</MenuItem>
             <MenuItem href="">POST</MenuItem>
-            <MenuItem href="">VOTE</MenuItem>
+            <MenuItem href="https://vote-app-steel.vercel.app/">VOTE</MenuItem>
             </Center>
 
             <Right>
@@ -166,8 +166,8 @@ const Navbar = () => {
                 REGISTER
             </DropdownButton>
             <DropdownContent show={isRegisterDropdownOpen}>
-                <DropdownItem href="Register">Register as Designer</DropdownItem>
-                <DropdownItem href="#">Register as User</DropdownItem>
+                <DropdownItem href="/designer">Register as Designer</DropdownItem>
+                {/* <DropdownItem href="/designer">Register as User</DropdownItem> */}
             </DropdownContent>
             <DropdownButton onClick={toggleSignInDropdown}>
                 SIGN IN

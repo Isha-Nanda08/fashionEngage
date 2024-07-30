@@ -7,7 +7,7 @@ function UpcommingEvents() {
    
 
 
-    <div className='bg-[#EAE7E4]'>
+    <div id='Upcoming' className='bg-[#EAE7E4]'>
       
       <h1 className=' text-center tracking-widest text-[#EAE7E4] bg-black'>UPCOMMING EVENTS</h1>
       <div className=' flex items-center justify-center p-4'>

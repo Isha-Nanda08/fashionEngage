@@ -1,7 +1,14 @@
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button } from "@material-tailwind/react";
+import { useNavigate } from 'react-router-dom';
 
 function CardDefault(props) {
+ const Navigate = useNavigate();
+
+ const handleNavigate = () => {
+  Navigate("/themeHome")
+ }
+
   return (
     <div>
       <Card className="mt-6 w-96 hover:scale-105 transition-all">
@@ -25,7 +32,9 @@ function CardDefault(props) {
           </div>
         </CardBody>
         <CardFooter className="pt-0">
-          {props.UpcomingEvents && <Button>Participate Now</Button>}
+          {props.UpcomingEvents && <Button
+          onClick={handleNavigate}
+          >Participate Now</Button>}
         </CardFooter>
       </Card>
     </div>

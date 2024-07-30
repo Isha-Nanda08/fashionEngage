@@ -141,7 +141,7 @@ const Register = () => {
                 placeholder="password" onChange={(e)=>setPassword(e.target.value)}/>
                 
                 
-                <Button>Register</Button>
+                <Button type="submit">Register</Button>
                 <StyledLink to="/login">ALREADY HAVE AN ACCOUNT?</StyledLink>
             </Form>
         </Wrapper>
