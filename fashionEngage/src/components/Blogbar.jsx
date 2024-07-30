@@ -11,7 +11,7 @@ const Blogbar = () => {
           <a href="/">home</a>
           <a href="/write">Post a Blog</a>
           <a href="#blog">Read blogs</a>
-          <a href="http://localhost:5173/">Post your Designs</a>
+          
         </div>
       </div>
     </nav>

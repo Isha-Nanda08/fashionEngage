@@ -1,9 +1,7 @@
-import React from 'react'
-import Navbar from "../components/navbar";
+import React from 'react';
 import styled from 'styled-components';
+import Navbar from '../components/navbar';
 import '../styles/home.css';
-import SvgPattern from '../components/SvgPattern';
-
 
 const Container=styled.div`
 background-image:url("https://assets.vogue.com/photos/6137eefc598e49fed3cc194a/master/w_1600%2Cc_limit/_DSC5744.jpg");
@@ -42,9 +40,6 @@ const Home = () => {
     <Container >
         <Navbar/>
         <Content>Embrace  Your  Individuality</Content>
-        <Content2>
-            <SvgPattern/>
-        </Content2>
     </Container>
   )
 }
