@@ -31,13 +31,13 @@ img{
 /* header */
 header{
     min-height: 100vh;
-    background: linear-gradient(rgba(228, 223, 223, 0.4), rgba(0, 0, 0, 0.4)), url("https://hips.hearstapps.com/hmg-prod/images/indian-fashion-bloggers-1608144515.jpg") center/cover no-repeat fixed;
+    background: linear-gradient(rgba(228, 223, 223, 0.4), rgba(0, 0, 0, 0.4)), url("https://www.stylerave.com/wp-content/uploads/2021/11/1000-x-1000-5-4.png") center/cover no-repeat fixed;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
 }
 .navbar{
-    background: #104848e3;
+    background: #000000eb;
     padding: 0.45rem;
     position: fixed;
     z-index: 10;
@@ -89,7 +89,7 @@ header{
 }
 .banner-title span{
     font-family: var(--Playfair);
-    color: rgb(2, 51, 51);
+    color: rgb(1, 1, 1);
 }
 .banner p{
     padding: 1rem 0 2rem 0;

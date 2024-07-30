@@ -6,14 +6,15 @@ import SvgPattern from '../components/SvgPattern';
 
 
 const Container=styled.div`
-    background-image:url("https://fabriclore.com/cdn/shop/articles/Blog-Banner-for-graphics_25_a22464dc-56ab-473f-9d04-820141fc8a56.jpg?v=1669106392&width=1500");
+background-image:url("https://assets.vogue.com/photos/6137eefc598e49fed3cc194a/master/w_1600%2Cc_limit/_DSC5744.jpg");
     width: 100%;
     height: 100vh;
     background-size: cover; 
     background-position: center; 
-    background-repeat: no-repeat; 
-
-`
+    background-repeat: repeat; 
+    position: fixed;
+    
+    `
 const Content=styled.div`
     position: absolute;
    top:60%;

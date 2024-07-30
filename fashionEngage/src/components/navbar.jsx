@@ -14,7 +14,7 @@ z-index: 20;
     flex-direction:column;
     color: #000;
     height: 70px;
-    background-color: #104848e3;
+    background-color: #040404e2;
     position: sticky;
     margin:0;
     background-position: center;
@@ -85,7 +85,7 @@ const MenuItem=styled.a`
     margin-left: 25px;
     position:relative;
     /* height:100%; */
-    color: #000;
+    color: #fff;
     text-decoration:none;
     
     padding: 15px 15px;
@@ -103,7 +103,7 @@ const MenuItem=styled.a`
 
 
 const DropdownButton = styled.button`
-  background-color: #125050d5;
+  background-color: #151515d4;
   color: white;
   border: none;
   cursor: pointer;
@@ -117,7 +117,7 @@ const DropdownButton = styled.button`
 const DropdownContent = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
   position: absolute;
-  background-color: #2a6f68;
+  background-color: #080808;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
