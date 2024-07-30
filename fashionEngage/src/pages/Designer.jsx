@@ -3,11 +3,12 @@ import { Button } from "@material-tailwind/react";
 import PastEvents from './PastEvents';
 import UpcommingEvents from './UpcommingEvents';
 import  FooterWithSitemap  from '../components/Footer';
+import NavbarD from '../components/NavbarD';
 
 function Designer() {
   return (
     <>
- 
+      <NavbarD/>
      
       <div className='flex border-b-2 w-full h-[500px]'>
       <div className='w-[35%] flex justify-center items-center bg-black h-full text-[#EAE7E4]'>
