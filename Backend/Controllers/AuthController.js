@@ -1,7 +1,11 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const UserModel = require("../models/User");
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const BlogModel = require('../models/Blog');
+const router = express.Router();
 
 
 const register = async (req, res) => {
@@ -69,28 +73,37 @@ const login = async (req, res) => {
 
 
 
-const blog = async (req, res) => {
+// Handle blog post with file upload
+
+const blog= async (req, res) => {
     try {
         const { title, content } = req.body;
-       
-        const blogModel = new BlogModel({ title, content });
-        await blogModel.save();
-        res.status(201)
-            .json({
-                message: "blog written successfully",
-                success: true
-            })
+        const image = req.file ;
+
+        // Log incoming data for debugging
+        console.log('Received Data:', { title, content, image });
+
+        const newBlog = new BlogModel({
+            title,
+            content,
+            image
+        });
+
+        await newBlog.save();
+        res.status(201).json({
+            message: 'Blog written successfully',
+            success: true
+        });
     } catch (err) {
-        res.status(500)
-            .json({
-                message: "Internal server errror",
-                success: false
-            })
+        console.error('Error:', err);
+        res.status(500).json({
+            message: 'Internal server error',
+            success: false
+        });
     }
-}
+};
 
 module.exports = {
     register,
-    login,
-    blog
+    login,blog
 }

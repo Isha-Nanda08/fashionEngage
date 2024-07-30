@@ -10,10 +10,11 @@ const BlogSchema = new Schema({
         type: String,
         required: true,
     },
-    // image: {
-    //     type: String ,
-    //     required: false,
-    // }
+    image: {
+        type: String,
+        required: false, // Make this optional
+    },
+    
 });
 
 const BlogModel = mongoose.model('blogs', BlogSchema);
