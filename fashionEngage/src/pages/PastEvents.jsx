@@ -4,7 +4,7 @@ import { fashionEvents } from "../Events";
 
 function PastEvents(props) {
   return (
-    <div id={props.id} className="bg-[#EAE7E4]">
+    <div id="Past" className="bg-[#EAE7E4] Past">
       <div className="bg-black">
         <h1 className="w-full text-center tracking-widest font-bold text-[#EAE7E4]">PAST EVENTS</h1>
       </div>

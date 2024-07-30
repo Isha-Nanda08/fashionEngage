@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from "@material-tailwind/react";
 import PastEvents from './PastEvents';
 import UpcommingEvents from './UpcommingEvents';
 import  FooterWithSitemap  from '../components/Footer';
 import NavbarD from '../components/NavbarD';
 
+
 function Designer() {
+
+  const handleEdit  = () =>{
+     setedit((prev)=>!prev)
+
+
+  }
+
+  const [edit, setedit] = useState(false);
+  const [input, setinput] = useState(" Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aut vel rerum temporibus ut animi vero porro unde labore quaerat culpa tempora, molestias quam praesentium pariatur ratione dicta nam illo.");
   return (
     <>
       <NavbarD/>
@@ -18,10 +28,32 @@ function Designer() {
         <div className='w-[65%] p-16 flex flex-col justify-center items-center bg-[#EAE7E4]'>
           <div className='md:w-96 font-pop flex flex-col items-center justify-center gap-2'>
           <h1 className='text-5xl font-bold whitespace-nowrap mt-3 font-play '>My Story</h1>
-           <span className='text-center md:text-base text-xs md:w-auto w-60 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, aspernatur iusto! Pariatur cumque id, consectetur fuga nam ab minus, adipisci nisi vero eligendi voluptatibus sapiente? Deleniti distinctio reiciendis in amet!</span>
+          
+            {
+              edit ? <div>
+                <textarea 
+                type='text'
+                value={input}
+                onChange={(e)=>(setinput(e.target.value))}
+                ></textarea>
+              </div>
+              
+              : <span className='text-center md:text-base text-xs md:w-auto w-60'>
+               {
+                input
+               }
+              </span>
+            }
+            
            </div>
  
-          <Button variant='outlined'>Edit</Button>
+          <Button 
+          onClick={handleEdit}
+          variant='outlined'>
+            {
+              edit ? "Save" : "Edit"
+            }
+          </Button>
 
         </div>
 

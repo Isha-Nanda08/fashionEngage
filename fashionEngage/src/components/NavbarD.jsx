@@ -7,10 +7,9 @@ function NavbarD() {
       <div className=' w-full h-full flex items-center justify-between md:px-8 px-3'>
         <div className='font-play tracking-widest'><span>Shreya</span></div>
         <div className='flex md:gap-5 font-pop md:text-sm tracking-wide whitespace-nowrap text-xs gap-3'>
-        <Link href='/#Home'>About</Link>
-        <Link href='#Past'>Past Events</Link>
-        <Link href='/#Upcoming'>Upcoming Events</Link>
-        <Link href='/#achieve'>Accomplishments</Link>
+        <a href='#Home'>About</a>
+        <a href='#Past'>Past Events</a>
+        <a href='#Upcoming'>Upcoming Events</a>
       </div>
     </div>
     </div>

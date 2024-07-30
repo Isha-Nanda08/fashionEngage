@@ -8,9 +8,7 @@ function ThemeNavbar() {
       <div className='font-GV  text-3xl'>Fashion Engage</div>
 
       <div className='flex gap-4 text-[10px] md:text-sm'>
-      <Link>HOME</Link>
-      <Link>SHOP</Link>
-      <Link>BLOG</Link>
+      <a href='/'>HOME</a>
       <Link>FAQ</Link>
       <Link>CONTACT US</Link>
       </div>
