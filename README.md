@@ -78,7 +78,7 @@ https://github.com/user-attachments/assets/fc7d9c0b-0c5c-4474-a395-7726a134a09c
 
 
 <br>
-<h2 align="center"><b>Developed by Team &lt&#47Syntax Slayers</b></h2><br>
+<h2 align="center"><b>Developed by Team &lt&#47Syntax Slayers&gt</b></h2><br>
 
 
 [![](https://img.shields.io/badge/LinkedIn-Isha_Nanda-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/isha-nanda-a3a531257/)
