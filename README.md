@@ -1,6 +1,6 @@
 
 
-<h1 align="center">fashionEngage</h1>
+<h1>fashionEngage</h1>
 
 
 
