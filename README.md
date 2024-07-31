@@ -62,9 +62,9 @@ For Designers
 
 <h2><strong>Demo vedio</strong></h2>
 <br>
-<div align="center">
-  https://github.com/user-attachments/assets/fc7d9c0b-0c5c-4474-a395-7726a134a09c
-</div>
+
+https://github.com/user-attachments/assets/fc7d9c0b-0c5c-4474-a395-7726a134a09c
+
 
 
 
