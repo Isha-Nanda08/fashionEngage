@@ -59,6 +59,9 @@ For Designers
 ---
 
 <h2><strong>Workflow</h2></strong>
+<img src="https://github.com/user-attachments/assets/b8885888-69bb-4ff7-ab86-cac3d8541f69">
+
+ <br>
 
 <h2><strong>Demo vedio</strong></h2>
 <br>
