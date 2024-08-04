@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "./App"
+import App from "./App.jsx"
 import { BrowserRouter as Router } from 'react-router-dom'
 import './styles/index.css'
 
@@ -12,4 +12,4 @@ ReactDom.render(
     
   </React.StrictMode>,
     
-    document.getElementById("root"))
+    document.getElementById("root"));

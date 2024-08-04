@@ -1,0 +1,16 @@
+.item-container {
+    border: 2px solid black;
+}
+.item-container img {
+    height: 400px;
+    /* width: 400px; */
+}
+.item-container .info {
+    display:  flex; gap: 4px;
+    flex-direction: column;
+    padding: 6px 24px;
+    /* text-align: right; */
+}
+.item-container h2 { font-size: 32px; }
+.item-container .description { font-style: italic; }
+.item-container .cost { font-size: 20px; }

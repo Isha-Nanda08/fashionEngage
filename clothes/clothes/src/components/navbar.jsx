@@ -60,7 +60,7 @@ const Right=styled.div`
     padding-right:15px;
 `
 
-const Logo=styled.div`
+const Logo=styled.a`
     
     
     color: #fff;
@@ -71,8 +71,9 @@ const Logo=styled.div`
     font-family: 'Great Vibes', cursive;
     font-size: 40px;
     letter-spacing:3px;
+    text-decoration: none;
     &:hover{
-        transform: scale(1.2);
+        transform: scale(1.1);
         background-color:#3241403c ;
     }
     
@@ -149,7 +150,7 @@ const Navbar = () => {
    <Container>
         <Wrapper>
             <Left>
-                <Logo>
+                <Logo href="/">
                     fashionEngage
                 </Logo>
                 
